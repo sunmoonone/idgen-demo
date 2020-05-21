@@ -19,10 +19,13 @@ public class TypeIdGenerator {
     private final static long sequenceMask = ~(-1L << sequenceBits);
 
     private ICounterService counterService;
+    private IGeneratorConfig config;
 
-    public TypeIdGenerator(ICounterService counterService) {
+    public TypeIdGenerator(ICounterService counterService, IGeneratorConfig config) {
         this.counterService = counterService;
+        this.config = config;
     }
+
 
     public ICounterService getCounterService(){
         return counterService;
@@ -53,6 +56,10 @@ public class TypeIdGenerator {
                 | (dc << dcShift)
                 | type;
 
+    }
+
+    public long generateId() throws IllegalArgumentException, IllegalStateException {
+        return this.generateId(this.config.getObjType(), this.config.getDc());
     }
 
     public static long add(long id, int delta, long dc, long type){

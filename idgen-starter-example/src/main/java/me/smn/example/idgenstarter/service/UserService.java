@@ -1,6 +1,5 @@
-package me.smn.example.idgen.service;
+package me.smn.example.idgenstarter.service;
 
-import me.smn.example.idgen.MyConfig;
 import me.smn.idgen.TypeIdGenerator;
 import me.smn.idgen.model.User;
 import org.springframework.beans.factory.annotation.Autowired;

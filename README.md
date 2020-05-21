@@ -1,4 +1,4 @@
-开发一个spring-boot start项目
+开发一个spring-boot starter项目
 -------
 ## spring-boot 配置 
 spring-boot 的一大好处就是基于注解的配置和自动配置
@@ -82,3 +82,8 @@ com.mycorp.libx.autoconfigure.LibXWebAutoConfiguration
 idgen-starter 空项目
 
 ## 运行演示
+
+
+## homework
+问题：如果一个web项目里有多个对象，如何使用idgenerator?  
+实现基于redis的CacheCounter

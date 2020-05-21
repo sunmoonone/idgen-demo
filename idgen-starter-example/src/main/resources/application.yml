@@ -1,0 +1,7 @@
+server:
+  port: 8080
+
+idgen:
+  keyPrefix: "2uid:"
+  objType: 1
+  dc: 1

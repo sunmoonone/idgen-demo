@@ -29,7 +29,7 @@ public class IdgenExampleApplication {
         CacheCounter counter = new CacheCounter(config.getKeyPrefix(),cache);
         counter.initCounter(config.getObjType(),config.getDc(),0);
 
-        return new TypeIdGenerator(counter);
+        return new TypeIdGenerator(counter, config);
     }
 
 }

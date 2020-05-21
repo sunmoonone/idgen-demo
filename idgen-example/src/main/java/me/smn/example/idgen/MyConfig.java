@@ -1,11 +1,12 @@
 package me.smn.example.idgen;
 
+import me.smn.idgen.IGeneratorConfig;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 @Component
 @ConfigurationProperties(prefix="idgen")
-public class MyConfig {
+public class MyConfig implements IGeneratorConfig {
     private String keyPrefix;
 
     private Long objType;

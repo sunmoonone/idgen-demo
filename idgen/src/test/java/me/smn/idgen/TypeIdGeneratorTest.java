@@ -12,20 +12,54 @@ import static org.junit.Assert.assertEquals;
 public class TypeIdGeneratorTest {
 
     private ICache cache;
+    private IGeneratorConfig config;
+    CacheCounter cc;
+    TypeIdGenerator generator;
 
     @Before
     public void initCache() {
-        this.cache = new CacheImpl();
+        String keyPre = "0:testGenId:";
+        long type = 10;
+        long dc = 0;
+
+        config = new GeneratorConfigImpl(keyPre, type, dc);
+
+        cache = new CacheImpl();
+        cc = new CacheCounter(keyPre, cache);
+        generator = new TypeIdGenerator(cc, config);
+
+    }
+
+    private static class GeneratorConfigImpl implements IGeneratorConfig{
+        private String pre;
+        private long type;
+        private long dc;
+
+        GeneratorConfigImpl(String keyPre, long type, long dc){
+            this.pre = keyPre;
+            this.type = type;
+            this.dc = dc;
+
+        }
+
+        @Override
+        public String getKeyPrefix() {
+            return pre;
+        }
+
+        @Override
+        public Long getObjType() {
+            return type;
+        }
+
+        @Override
+        public Long getDc() {
+            return dc;
+        }
     }
 
     @Test
     public void testGenId() {
-
-        String keyPre = "0:testGenId:";
-
-        CacheCounter cc = new CacheCounter(keyPre, cache);
-
-        TypeIdGenerator generator = new TypeIdGenerator(cc);
 
         try {
             generator.generateId(-1, 1);
@@ -51,8 +85,8 @@ public class TypeIdGeneratorTest {
         }
 
 
-        long type = 10;
-        long dc = 0;
+        long type = config.getObjType();
+        long dc = config.getDc();
 
         cache.del("0:testGenId:10:0");
         try {

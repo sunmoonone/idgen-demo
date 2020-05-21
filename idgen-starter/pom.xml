@@ -10,6 +10,24 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>idgen-starter</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>me.smn</groupId>
+            <artifactId>idgen</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
 
 
 </project>
