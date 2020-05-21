@@ -1,0 +1,64 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+### VS Code ###
+.vscode/
+
+# Eclipse
+.settings/
+.metadata
+
+.attach_pid*
+# Mac
+.DS_Store
+
+# Maven
+log/
+lib/
+.mvn/
+bin/
+
+# vim
+*.swp
+
+# python
+*.py[cd]
+
+*~
+*#*#
+*.#*
+dist/
+logs/
+/application.pid
+
+### NetBeans ###
+nbproject/private/
+nbbuild/
+nbdist/
+.nb-gradle/
