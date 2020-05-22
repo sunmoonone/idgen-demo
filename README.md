@@ -49,10 +49,11 @@ select id, user_id, create_t, content from comment where obj_id = 123 order by c
 使用spring-boot 在线创建工具
 
 ```
-idgen-demo  
+idgen-demo       # 父级项目
   idgen          # 算法实现  
-  idgen-starter  # starter项目
-  idgen-example  # web项目的web 使用starter项目提供的jar
+  idgen-examole  # 依赖idgen项目的一个样例web项目
+  idgen-starter             # starter项目
+  idgen-starter- example    # 依赖starter项目的一个样例web项目
 ```
 演示创建好的项目
 
